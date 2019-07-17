@@ -1,0 +1,50 @@
+server:
+  port: 8001
+spring:
+   profiles: dev
+   application:
+     name: springcloud-config-provider
+   datasource:
+       driver-class-name: com.mysql.jdbc.Driver
+       url: jdbc:mysql://localhost:3306/springcloud
+       username: root
+       password: 123456
+       type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #类别名
+  type-aliases-package: com.sxt.pojo
+logging:
+  level: 
+   #输出sql语句
+    com.sxt.mapper: debug 
+eureka:
+   client: #客户端注册进eureka服务列表内
+      service-url:
+         defaultZone: http://127.0.0.1:8761/eureka/
+---
+server:
+  port: 8002
+spring:
+   profiles: test
+   application:
+     name: springcloud-config-provider
+   datasource:
+       driver-class-name: com.mysql.jdbc.Driver
+       url: jdbc:mysql://localhost:3306/springcloud
+       username: root
+       password: 123456
+       type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #类别名
+  type-aliases-package: com.sxt.pojo
+logging:
+  level: 
+   #输出sql语句
+    com.sxt.mapper: debug      
+eureka:
+   client: #客户端注册进eureka服务列表内
+      service-url:
+         defaultZone: http://127.0.0.1:8761/eureka/
+   instance:
+      instance-id: dept-8002.com
+      prefer-ip-address: true       
