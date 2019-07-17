@@ -3,10 +3,10 @@ server:
 spring:
    profiles: dev
    application:
-     name: springcloud-config-provider
+     name: emp-provider
    datasource:
        driver-class-name: com.mysql.jdbc.Driver
-       url: jdbc:mysql://localhost:3306/springcloud
+       url: jdbc:mysql://localhost:3306/springdata
        username: root
        password: 123456
        type: com.alibaba.druid.pool.DruidDataSource
@@ -25,10 +25,10 @@ server:
 spring:
    profiles: test
    application:
-     name: springcloud-config-provider
+     name: emp-provider
    datasource:
        driver-class-name: com.mysql.jdbc.Driver
-       url: jdbc:mysql://localhost:3306/springcloud
+       url: jdbc:mysql://localhost:3306/springdata
        username: root
        password: 123456
        type: com.alibaba.druid.pool.DruidDataSource
